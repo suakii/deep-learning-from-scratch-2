@@ -55,6 +55,11 @@ class Softmax:
         return self.out
     
     def backward(self, dout):
+        dx = self.out * dout
+        sumdx = np.sum(dx, axis=1, keepdims=True)
+        dx -= self.out * sumdx
+        return dx
+    
         
 
 
