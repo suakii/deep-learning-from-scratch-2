@@ -1,4 +1,4 @@
-from config import GPU
+from common.config import GPU
 
 if GPU:
     import cupy as np
